@@ -182,7 +182,7 @@
 	<name>GREP</name>
 	<submenu>GREP</submenu>
 	<unique-id>1756320208326705-7</unique-id>
-	<command>CHOICE=$(zenity --entry --text=&quot;grep for what?&quot;); grep -iar $CHOICE %f | strings -a | zenity --text-info  --width 500  --height 700  --title  GREP</command>
+	<command>CHOICE=$(zenity --entry --text=&quot;grep for what?&quot;); grep -ia $CHOICE %f | strings -a | zenity --text-info  --width 500  --height 700  --title  GREP</command>
 	<description>Grep through files and binaries for search term</description>
 	<range>*</range>
 	<patterns>*</patterns>
