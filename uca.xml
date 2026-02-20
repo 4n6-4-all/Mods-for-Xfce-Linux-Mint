@@ -257,8 +257,8 @@
 	<name>SECURE DELETE</name>
 	<submenu>Secure Delete</submenu>
 	<unique-id>1756391471247770-1</unique-id>
-	<command>zenity --question --text=&quot;Are you sure you want to shred this file?&quot; &amp;&amp; srm %f</command>
-	<description>Overwrite, rename and truncate  files to make recovery more difficult</description>
+	<command>zenity --question --text=&quot;Are you sure you want to securly delete this file with srm?&quot; &amp;&amp; srm %f</command>
+	<description>Overwrite, rename and truncate files to make recovery more difficult</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<audio-files/>
