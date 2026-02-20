@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>Terminal</icon>
+	<name>Open in Terminal</name>
+	<submenu></submenu>
+	<unique-id>1756580258022407-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Open terminal in the selected folder</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder</icon>
+	<name>Open as Root</name>
+	<submenu></submenu>
+	<unique-id>1756580258022564-2</unique-id>
+	<command>pkexec thunar %F</command>
+	<description>Open the folder with administration privileges</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Create a Link</name>
+	<submenu></submenu>
+	<unique-id>1756580258022726-3</unique-id>
+	<command>ln -s %f  &apos;Link to %n&apos;</command>
+	<description>Create a symbolic link for each selected item</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>Verify</name>
+	<submenu></submenu>
+	<unique-id>1756580258022780-4</unique-id>
+	<command>mint-iso-verify %f</command>
+	<description>Verify the authenticity and integrity of the image</description>
+	<range></range>
+	<patterns>*.iso;*.ISO</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>gtk-find</icon>
+	<name>Search</name>
+	<submenu></submenu>
+	<unique-id>1756580258022958-5</unique-id>
+	<command>catfish %f</command>
+	<description>Search for Files</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>org.freedesktop.fwupd</icon>
+	<name>STRINGS</name>
+	<submenu></submenu>
+	<unique-id>1756284808651820-4</unique-id>
+	<command>strings %f  | zenity --text-info  --width 500  --height 700 --title  STRINGS</command>
+	<description>view human readable strings in files and binaries</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>mintinstall-installed</icon>
+	<name>STAT</name>
+	<submenu></submenu>
+	<unique-id>1756573710830765-1</unique-id>
+	<command>stat %n  | zenity --text-info --height 250 --width 410 --title STAT</command>
+	<description>Shows Permissions, File Type, Owner and Date of Last Modification</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>text-x-script</icon>
+	<name>TAIL</name>
+	<submenu></submenu>
+	<unique-id>1756378458630943-2</unique-id>
+	<command>tail %f | zenity --text-info  --width 500  --height 700  --title  TAIL</command>
+	<description>View the last entries in a file. Good for logs </description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-find</icon>
+	<name>BINWALK</name>
+	<submenu></submenu>
+	<unique-id>1756617584416762-1</unique-id>
+	<command>binwalk --dd=&apos;.*&apos;  %f</command>
+	<description>Walks files and extracts any embedded data</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-x-generic</icon>
+	<name>BASE64</name>
+	<submenu></submenu>
+	<unique-id>1756618457974583-2</unique-id>
+	<command>base64 -d %f | strings |  zenity --text-info</command>
+	<description>Decode base64 from file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>MD5</name>
+	<submenu>Checksums</submenu>
+	<unique-id>1756279327355803-3</unique-id>
+	<command>md5sum %f  | awk &apos;{  print $1 }&apos; | zenity --text-info  --width 272 --title MD5SUM</command>
+	<description>View MD5 sum of files </description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>SHA1</name>
+	<submenu>Checksums</submenu>
+	<unique-id>1756279173592260-1</unique-id>
+	<command>sha1sum %f  | awk &apos;{  print $1 }&apos; | zenity --text-info  --width 338 --title SHA1</command>
+	<description>View SHA1 sum of files </description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-certificate</icon>
+	<name>SHA256</name>
+	<submenu>Checksums</submenu>
+	<unique-id>1756279282495553-2</unique-id>
+	<command>sha256sum %f  | awk &apos;{  print $1 }&apos; | zenity --text-info  --width 518 --title SHA256</command>
+	<description>View SHA256 sum of files </description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>aptdaemon-resolve</icon>
+	<name>GREP</name>
+	<submenu>GREP</submenu>
+	<unique-id>1756320208326705-7</unique-id>
+	<command>CHOICE=$(zenity --entry --text=&quot;grep for what?&quot;); grep -iar $CHOICE %f | strings -a | zenity --text-info  --width 500  --height 700  --title  GREP</command>
+	<description>Grep through files and binaries  for search term</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>software-sources</icon>
+	<name>ZGREP</name>
+	<submenu>GREP</submenu>
+	<unique-id>1756350609853256-1</unique-id>
+	<command>CHOICE=$(zenity --entry --text=&quot;grep for what?&quot;); zgrep -ia $CHOICE %f | strings -a | zenity --text-info  --width 500  --height 700  --title  ZGREP</command>
+	<description>Grep through gzipped archives</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>applications-mail</icon>
+	<name>ENCRYPT</name>
+	<submenu>Encryption</submenu>
+	<unique-id>1770713385998929-2</unique-id>
+	<command>sh -c &apos;password=$(zenity --entry --hide-text --text=&quot;Enter your encryption password:&quot;) &amp;&amp; openssl enc -aes-256-cbc -salt -in %f -out %f.enc -k &quot;$password&quot;&apos;</command>
+	<description>Encrypt a file using openssl AES 256 using a passphrase</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>applications-puzzles</icon>
+	<name>DECRYPT</name>
+	<submenu>Encryption</submenu>
+	<unique-id>1770740544899951-3</unique-id>
+	<command>bash -c &apos;openssl aes-256-cbc -d -in %f -out %f.dec -pass pass:&quot;$(zenity --password --title=&quot;Enter decryption password&quot;)&quot; &amp;&amp; zenity --info --text=&quot;Decryption complete!&quot;&apos;</command>
+	<description>Decrypt a  file using openssl AES 256 using a passphrase</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>applications-boardgames</icon>
+	<name>SHRED</name>
+	<submenu>Secure Delete</submenu>
+	<unique-id>1770710562475480-1</unique-id>
+	<command>zenity --question --text=&quot;Are you sure you want to shred this file?&quot; &amp;&amp; shred -zu %f</command>
+	<description>Shred files to make recovery more difficult</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>nm-insecure-warn</icon>
+	<name>SECURE DELETE</name>
+	<submenu>Secure Delete</submenu>
+	<unique-id>1756391471247770-1</unique-id>
+	<command>zenity --question --text=&quot;Are you sure you want to shred this file?&quot; &amp;&amp; srm %f</command>
+	<description>Overwrite, rename and truncate  files to make recovery more difficult</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+</actions>
