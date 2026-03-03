@@ -42,6 +42,7 @@ echo "================================================="
 echo "      Creating encrypted apt mirrors"
 echo "================================================="
 sleep 2
+apt update && apt install apt-transport-https -y
 sed -i 's/http:/https:/g' /etc/apt/sources.list.d/official-package-repositories.list
 sed -i 's/packages.linuxmint.com/mirrors.ocf.berkeley.edu\/linuxmint-packages/' /etc/apt/sources.list.d/official-package-repositories.list
 sleep 2
@@ -64,7 +65,7 @@ echo "========================================="
 echo "          Installing apps"
 echo "========================================="
 sleep 2
-apt update && apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager wireshark zenmap wxhexeditor bleachbit binwalk secure-delete gparted opensnitch apt-transport-https
+apt update && apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager wireshark zenmap wxhexeditor bleachbit binwalk secure-delete gparted opensnitch autopsy
 echo "================================================="
 echo "         Completed modifications"
 echo "================================================="
