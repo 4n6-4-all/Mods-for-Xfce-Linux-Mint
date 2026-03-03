@@ -6,15 +6,15 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-echo "=============================================="
-echo "          Setting up firewall "
-echo "=============================================="
+echo "============================================"
+echo "           Setting up firewall"
+echo "============================================"
 sleep 2
 ufw enable
 ufw default deny incoming
-echo "=============================================="
-echo " Setting system-wide DNS over TLS with Quad9 "
-echo "=============================================="
+echo "============================================="
+echo " Setting system-wide DNS over TLS with Quad9"
+echo "============================================="
 sleep 2
 sed -i 's/\#DNS=/DNS=9.9.9.9#dns.quad9.net/' /etc/systemd/resolved.conf
 sed -i 's/\#FallbackDNS=/FallbackDNS=149.112.112.112#dns.quad9.net/' /etc/systemd/resolved.conf
@@ -26,28 +26,28 @@ echo "========================================"
 sleep 2
 systemctl restart systemd-resolved.service
 systemctl restart NetworkManager.service
-echo "=========================================="
+echo "========================================="
 echo "Setting GRUB to show boot logs at startup"
-echo "=========================================="
+echo "========================================="
 sleep 2
 sed -i 's/quiet splash/profile/' /etc/default/grub
 update-grub2
-echo "========================================="
+echo "=========================================="
 echo "Copying policies.json to Firefox directory"
-echo "========================================="
+echo "=========================================="
 sleep 2
 mkdir -p /etc/firefox/policies
 cp policies.json /etc/firefox/policies
-echo "================================================="
-echo "      Creating encrypted apt mirrors"
-echo "================================================="
+echo "========================================="
+echo "     Creating encrypted apt mirrors"
+echo "========================================="
 sleep 2
-apt update && apt install apt-transport-https -y
+apt update && apt install -y apt-transport-https
 sed -i 's/http:/https:/g' /etc/apt/sources.list.d/official-package-repositories.list
 sed -i 's/packages.linuxmint.com/mirrors.ocf.berkeley.edu\/linuxmint-packages/' /etc/apt/sources.list.d/official-package-repositories.list
 sleep 2
 echo "========================================="
-echo "      Removing bloated apps"
+echo "        Removing bloated apps"
 echo "========================================="
 sleep 2
 apt-get purge avahi* -y
@@ -62,12 +62,12 @@ apt-get purge transmission* -y
 apt-get purge cups* -y
 apt-get purge network-manager-config-connectivity-ubuntu -y
 echo "========================================="
-echo "          Installing apps"
+echo "           Installing apps"
 echo "========================================="
 sleep 2
 apt update && apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager wireshark zenmap wxhexeditor bleachbit binwalk secure-delete gparted opensnitch autopsy
-echo "================================================="
-echo "         Completed modifications"
-echo "================================================="
+echo "========================================="
+echo "        Completed modifications"
+echo "========================================="
 sleep 2
 exit 1
