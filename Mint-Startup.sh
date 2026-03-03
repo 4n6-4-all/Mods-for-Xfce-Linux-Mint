@@ -70,4 +70,4 @@ echo "========================================="
 echo "        Completed modifications"
 echo "========================================="
 sleep 2
-exit 1
+exit 0
